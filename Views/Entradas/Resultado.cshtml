@@ -1,0 +1,44 @@
+﻿@model EntradasMvc.Models.Cotizacion
+
+@{
+    ViewData["Title"] = "Resultado de la cotización";
+}
+
+<h1>Resultado de la cotización</h1>
+
+<p>Cliente: <strong>@Model.Cliente</strong></p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Concepto</th>
+            <th>Monto (Bs)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Cantidad de entradas</td>
+            <td>@Model.Cantidad</td>
+        </tr>
+        <tr>
+            <td>Precio unitario</td>
+            <td>@Model.PrecioUnitario.ToString("F2")</td>
+        </tr>
+        <tr>
+            <td>Subtotal</td>
+            <td>@Model.Subtotal.ToString("F2")</td>
+        </tr>
+        <tr>
+            <td>Descuento</td>
+            <td>@Model.Descuento.ToString("F2")</td>
+        </tr>
+        <tr>
+            <td><strong>Total</strong></td>
+            <td><strong>@Model.Total.ToString("F2")</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<a asp-controller="Entradas" asp-action="Index" class="btn btn-secondary">
+    Nueva cotización
+</a>
